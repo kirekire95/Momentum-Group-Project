@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="stylesheet" href="css/styles.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+	 crossorigin="anonymous">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Courgette%7CPoppins%7CLato" type="text/css" media="all">
+	<title>Project</title>
+</head>
+
+<body>
+
+	<div id="wrapper">
+		<nav>
+			<div class="menu">
+				<ul>
+					<li>
+						<a href="#" id="Links">Links</a>
+					</li>
+					<li>
+						<form action="https://www.google.com/search" method="get" target="_blank">
+							<a href="#google-search" id="Search"><i class="fas fa-search"></i>
+								<input id="google-search" autocomplete="off" name="q" placeholder="Search..." type="search"></a>
+						</form>
+					</li>
+					<li>
+						<div id="weather__frontpage__container">
+							<a href="#weather__modal__location" id="Weather">
+								<canvas id="weather__icon__frontpage" width="64" height="64"></canvas></a>
+
+							<div id="weather__frontpage__temperature__section">
+								<h2 id="weather__frontpage__temperature__degrees"></h2>
+								<span></span>
+							</div>
+
+						</div>
+					</li>
+					<li>
+						<a href="#" id="Setttings"><i class="fas fa-cog"></i></a>
+					</li>
+					<li>
+						<a href="#modal" id="Todo">Todo</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
+
+		<div id="weather__modal__location">
+			<div id="weather__modal__location__content" class="width-20">
+				<a href="#" class="utility__times"><i class="fas fa-times"></i></a>
+				<h2 id="weather__modal__location__timezone">Please allow location access :)</h2>
+				<canvas id="weather__icon__modal" width="128" height="128"></canvas>
+
+				<div id="weather__modal__temperature">
+					<div id="weather__modal__temperature__section">
+						<h2 id="weather__modal__temperature__degrees"></h2>
+						<span></span>
+					</div>
+					<div id="weather__modal__temperature__description__container">
+						<div id="weather__modal__temperature__description"></div>
+						<div id="weather__modal__temperature__description__full"></div>
+
+						<span id="toggleWeeklyWeather"></span>
+
+						<div id="weather__modal__weekly__container">
+							<div class="weather__modal__weekly__content">
+								<canvas id="weather__icon__modal__monday" width="48" height="48"></canvas>
+								<h2 id="weather__icon__modal__monday__title"></h2>
+								<div class="weather__icon__modal__degree__container">
+									<h3 id="weather__icon__modal__monday__degrees"></h3>
+									<span class="weather__modal__temperature__section__span"></span>
+								</div>
+								<p id="weather__icon__modal__monday__summary"></p>
+							</div>
+
+							<div class="weather__modal__weekly__content">
+								<canvas id="weather__icon__modal__tuesday" width="48" height="48"></canvas>
+								<h2 id="weather__icon__modal__tuesday__title"></h2>
+								<div class="weather__icon__modal__degree__container">
+									<h3 id="weather__icon__modal__tuesday__degrees"></h3>
+									<span class="weather__modal__temperature__section__span"></span>
+								</div>
+								<p id="weather__icon__modal__tuesday__summary"></p>
+							</div>
+
+							<div class="weather__modal__weekly__content">
+								<canvas id="weather__icon__modal__wednesday" width="48" height="48"></canvas>
+								<h2 id="weather__icon__modal__wednesday__title"></h2>
+								<div class="weather__icon__modal__degree__container">
+									<h3 id="weather__icon__modal__wednesday__degrees"></h3>
+									<span class="weather__modal__temperature__section__span"></span>
+								</div>
+								<p id="weather__icon__modal__wednesday__summary"></p>
+							</div>
+
+							<div class="weather__modal__weekly__content">
+								<canvas id="weather__icon__modal__thursday" width="48" height="48"></canvas>
+								<h2 id="weather__icon__modal__thursday__title"></h2>
+								<div class="weather__icon__modal__degree__container">
+									<h3 id="weather__icon__modal__thursday__degrees"></h3>
+									<span class="weather__modal__temperature__section__span"></span>
+								</div>
+								<p id="weather__icon__modal__thursday__summary"></p>
+							</div>
+
+							<div class="weather__modal__weekly__content">
+								<canvas id="weather__icon__modal__friday" width="48" height="48"></canvas>
+								<h2 id="weather__icon__modal__friday__title"></h2>
+								<div class="weather__icon__modal__degree__container">
+									<h3 id="weather__icon__modal__friday__degrees"></h3>
+									<span class="weather__modal__temperature__section__span"></span>
+								</div>
+								<p id="weather__icon__modal__friday__summary"></p>
+							</div>
+
+							<div class="weather__modal__weekly__content">
+								<canvas id="weather__icon__modal__saturday" width="48" height="48"></canvas>
+								<h2 id="weather__icon__modal__saturday__title"></h2>
+								<div class="weather__icon__modal__degree__container">
+									<h3 id="weather__icon__modal__saturday__degrees"></h3>
+									<span class="weather__modal__temperature__section__span"></span>
+								</div>
+								<p id="weather__icon__modal__saturday__summary"></p>
+							</div>
+
+							<div class="weather__modal__weekly__content">
+								<canvas id="weather__icon__modal__sunday" width="48" height="48"></canvas>
+								<h2 id="weather__icon__modal__sunday__title"></h2>
+								<div class="weather__icon__modal__degree__container">
+									<h3 id="weather__icon__modal__sunday__degrees"></h3>
+									<span class="weather__modal__temperature__section__span"></span>
+								</div>
+								<p id="weather__icon__modal__sunday__summary"></p>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div id="modal">
+			<div id="modal__content">
+				<div id="modal__container__upper">
+					<a href="#" class="utility__times"><i class="fas fa-times"></i></a>
+					<div id="modal__content__todos">
+						<div id="modal__content__todos__input">
+							<input id="search-text" type="text" placeholder="Filter todos...">
+							<label>
+								<input type="checkbox" id="hide-completed"> Hide completed
+							</label>
+						</div>
+					</div>
+				</div>
+
+				<div id="todo__container">
+					<div id="todos"></div>
+					<form id="new-todo-modal" autocomplete="off">
+						<input id="goal__input__modal" type="text" placeholder="New todo..." required="" name="text">
+					</form>
+				</div>
+			</div>
+		</div>
+
+		<header>
+			<!-- Time of Day -->
+			<div id="timecontainer">
+				<h1 id="timeOfDay"></h1>
+			</div>
+			<!-- Greet and Goal -->
+			<div id="greetcontainer">
+				<h2 id="GreetUser"></h2>
+				<div id="container__goaltext">
+
+
+					<form id="new-todo-frontpage" autocomplete="off">
+						<h2 id="GoalofToday">What is your main focus for today?</h2>
+						<input id="goal__input" type="text" placeholder="" required="" name="text" autofocus>
+					</form>
+
+				</div>
+			</div>
+			<!-- Random Quote -->
+			<div id="randomQuoteContainer">
+				<h3 id="randomQuote"></h3>
+			</div>
+
+		</header>
+	</div>
+
+	<!-- Taken from a JavaScript Udemy Course, should modify and make it better (There is no CSS, etc.) -->
+	<script src="todo-functions.js"></script>
+	<script src="todo-app.js"></script>
+	<!-- Taken from a JavaScript Udemy Course, should modify and make it better (There is no CSS, etc.) -->
+	<script src="app.js"></script>
+	<script src="skycons.js"></script>
+</body>
+
+</html>

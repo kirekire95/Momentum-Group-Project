@@ -1,0 +1,542 @@
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0
+}
+
+html {
+	font-size: 62.5%
+}
+
+body {
+	font-family: 'Lato', sans-serif;
+	font-size: 1.6rem;
+	overflow-y: hidden;
+	word-wrap: break-word
+}
+
+header {
+	position: relative;
+	top: 62.5%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	margin: auto;
+	text-align: center;
+	user-select: none
+}
+
+ul {
+	list-style-type: none
+}
+
+ul li a {
+	font-family: 'Lato', sans-serif;
+	font-weight: lighter;
+	text-decoration: none;
+	color: rgba(255, 255, 255, 0.8)
+}
+
+ul li a:hover,
+ul li a:focus {
+	color: #F4BF08
+}
+
+a {
+	outline: none
+}
+
+#wrapper {
+	height: 100vh;
+	width: 100%;
+	background-image: linear-gradient(rgba(0, 0, 0, .5),rgba(0, 0, 0, .5)),url('https://source.unsplash.com/1920x1080/?nature');
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	opacity: 0.88
+}
+
+/* Widgets */
+
+#Weather {
+
+}
+
+#Links {
+	position: absolute;
+	left: 1%;
+	top: 3%
+}
+
+#Search {
+	position: absolute;
+	left: 4.5%;
+	top: 2%
+}
+
+#Search:focus-within {
+	color: #F4BF08
+}
+
+#Setttings {
+	position: absolute;
+	bottom: 2%;
+	left: 1%
+}
+
+#Todo {
+	position: absolute;
+	right: 1%;
+	bottom: 2%
+}
+
+/* Time of Day */
+
+#timeOfDay {
+	color: #fff;
+	margin-bottom: 2.5rem;
+	font-size: 11rem
+}
+
+/* Greet and Goal */
+
+#GreetUser {
+	font-family: 'Courgette', cursive;
+	color: #fff;
+	font-size: 4.5rem
+}
+
+#container__goaltext {
+	margin: auto
+}
+
+#GoalofToday {
+	color: #fff;
+	width: 100%;
+	font-size: 3.5rem;
+	margin-top: 2%;
+}
+
+/* Random Quote */
+
+#randomQuote {
+	color: #fff;
+	margin-top: 5%;
+	font-family: inherit;
+	font-size: 2.0rem;
+	font-style: italic
+}
+
+/* Input */
+
+input {
+	outline: none
+}
+
+#goal__input {
+	width: 550px;
+	padding-top: 4px;
+	display: block;
+	background: 0;
+	border: 0;
+	border-bottom: 2px solid #fff;
+	color: #fff;
+	font-weight: 500;
+	font-size: 200%;
+	line-height: 200%;
+	margin: auto;
+	text-align: center
+}
+
+input[type=search] {
+	border: solid 1px #ccc;
+	padding: 1.2rem;
+	width: 12rem;
+	margin-left: 1rem;
+	border-radius: 10em;
+	transition: all .5s
+}
+
+input[type=search]:focus {
+	width: 20rem;
+	background-color: #fff
+}
+
+/* Weather API Frontpage */
+
+#weather__frontpage__container {
+	position: absolute;
+	right: 4%;
+	top: 3%;
+	display: flex;
+	flex-direction: row;
+	flex: 1 1 auto;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	color: #fff;
+	-moz-user-select: none;
+}
+
+#weather__frontpage__temperature__section {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	cursor: pointer;
+}
+
+/* Weather API Modal */
+
+#weather__modal__location {
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100vh;
+	width: 100%;
+	background-color: rgba(22, 22, 22, 0.7);
+	z-index: 20;
+	opacity: 0;
+	color: #fff;
+	visibility: hidden;
+	transition: all .3s
+}
+
+#weather__modal__location__content {
+	position: absolute;
+	top: 10%;
+	right: 1%;
+	min-width: 200px;
+	padding: 3.5rem 0;
+	border-radius: .4rem;
+	background-color: rgba(8, 8, 8, 0.7);
+	box-shadow: 0 2rem 4rem rgba(22, 22, 22, 0.2);
+	font-size: 1.5rem;
+	color:#fff;
+	text-align: center
+}
+
+#weather__modal__location__timezone {
+	margin: 7.5% auto;
+	width: 90%;
+}
+
+#weather__modal__temperature {
+	padding-left: 30px;
+	padding-right: 30px;
+}
+
+#weather__modal__temperature__section {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	cursor: pointer;
+}
+
+#weather__modal__degree__section h2 {
+	font-size: 40px;
+}
+
+#weather__modal__degree__section span {
+	font-size: 30px;
+}
+
+#weather__modal__temperature__degrees {
+	
+}
+
+#weather__modal__temperature__description__container {
+	font-size: 1.6rem;
+}
+
+#weather__modal__temperature__description {
+	margin-top: 2.5%;
+	margin-bottom: 2.5%;
+}
+
+#weather__modal__temperature__description__full {
+	margin-bottom: 20px;
+}
+
+#weather__modal__location:target {
+	opacity: 1;
+	visibility: visible
+}
+
+#toggleWeeklyWeather {
+	font-size: 2.5rem;
+	cursor: pointer;
+}
+
+/* Weather API Week */
+
+#weather__modal__weekly__container {
+	margin-top: 2.5%;
+	display: none;
+	flex-direction: row;
+	justify-content: center;
+	user-select: none;
+}
+
+.weather__modal__weekly__content {
+	flex: 1;
+	align-self: flex-start;
+	padding: 10px;
+}
+
+.weather__icon__modal__degree__container {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
+
+#weather__icon__modal__monday,
+#weather__icon__modal__tuesday,
+#weather__icon__modal__wednesday,
+#weather__icon__modal__thursday,
+#weather__icon__modal__friday,
+#weather__icon__modal__saturday,
+#weather__icon__modal__sunday {
+	cursor: pointer;
+}
+
+#weather__frontpage__temperature__degrees__monday {
+	
+}
+
+#weather__frontpage__temperature__degrees__tuesday {
+	
+}
+
+#weather__frontpage__temperature__degrees__wednesday {
+	
+}
+
+#weather__frontpage__temperature__degrees__thursday {
+	
+}
+
+#weather__frontpage__temperature__degrees__friday {
+	
+}
+
+#weather__frontpage__temperature__degrees__saturday {
+	
+}
+
+#weather__frontpage__temperature__degrees__sunday {
+
+}
+
+/* TODO Modal */
+
+#modal {
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100vh;
+	width: 100%;
+	background-color: rgba(22, 22, 22, 0.7);
+	z-index: 20;
+	opacity: 0;
+	visibility: hidden;
+	transition: all .3s
+}
+
+#modal__content {
+	position: absolute;
+	bottom: 8%;
+	right: 1%;
+	min-width: 200px;
+	width: 25%;
+	height: 35%;
+	padding: 3.5rem 0;
+	border-radius: .4rem;
+	background-color: rgba(8, 8, 8, 0.7);
+	box-shadow: 0 2rem 4rem rgba(22, 22, 22, 0.2);
+	font-size: 1.5rem;
+	color:#fff;
+	overflow-y: scroll;
+	text-align: left
+}
+
+#modal__content::-webkit-scrollbar-track,
+#location__content::-webkit-scrollbar-track {
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	border-radius: 10px;
+	background-color: rgba(8,8,8,0.8)
+}
+
+#modal__content::-webkit-scrollbar,
+#location__content::-webkit-scrollbar {
+	width: 12px;
+	background-color: rgba(8,8,8,0.8)
+}
+
+#modal__content::-webkit-scrollbar-thumb,
+#location__content::-webkit-scrollbar-thumb {
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: #555
+}
+
+#modal__content__todos {
+	width: 100%;
+	font-size: 1.5rem
+}
+
+#modal:target {
+	opacity: 1;
+	visibility: visible
+}
+
+/* Todo list */
+
+#todo__container {
+	margin: auto;
+	width: 80%
+}
+
+.todoDiv {
+	padding-top: 5px;
+	padding-bottom: 5px
+}
+
+.todoDiv__title {
+	margin-top: 10px;
+	margin-bottom: 20px;
+	text-align: center
+}
+
+.todoDiv__checkbox {
+	border: 2px solid #333;
+	width: 20px;
+	height: 20px;
+	vertical-align: middle
+}
+
+.todoDiv__span {
+	padding-left: 10px;
+	padding-right: 10px;
+	vertical-align: middle
+}
+
+.todoDiv__removeButton {
+	font-size: 20px;
+	line-height: 0px;
+	border-radius: 50%;
+	color: #222;
+	vertical-align: middle;
+	visibility: hidden;
+	opacity: 0;
+	border: 0;
+	background: 0;
+	outline: none;
+	cursor: pointer;
+	transition: all .2s;
+	float: right;
+	clear: both
+}
+
+.todoDiv__removeButtonIcon {
+	border-radius: 50%;
+	width: 30px;
+	height: 30px;
+	padding: 5px
+}
+
+#modal__container__upper {
+	/* Unsure about this... */
+	
+	/*
+	position: sticky;
+	top: 0
+	*/
+}
+
+#modal__content__todos__input {
+	text-align: center
+}
+
+#search-text {
+	margin: auto;
+	display: block;
+	padding: .8rem;
+	border-radius: 4px
+}
+
+#hide-completed {
+	margin-top: 15px
+}
+
+#goal__input__modal {
+	width: 100%;
+	padding-top: 4px;
+	display: block;
+	background: 0;
+	border: 0;
+	color: #fff;
+	font-weight: 500;
+	font-size: 125%;
+	line-height: 125%;
+	margin: 10px auto;
+	text-align: left
+}
+
+.todoDiv > .todoDiv__removeButton { 
+	visibility: visible;
+	opacity: 1
+}
+
+.todoDiv__removeButton:hover { 
+	background-color: rgb(44, 44, 44);
+	color: rgb(223, 223, 223)
+}
+
+.todo__toggled {
+	text-decoration: line-through;
+	opacity: 0.7
+}
+
+/* Utility Classes */
+
+.utility__center {
+	text-align: center
+}
+
+.utility__times,
+.utility__times:link,
+.utility__times:visited {
+	position: absolute;
+	top: 2.5rem;
+	right: 2.5rem;
+	text-decoration: none;
+	color: #666;
+	font-size: 2.8rem;
+	transition: all .2s
+}
+
+.utility__times:hover {
+	color: #333
+}
+
+.width-20 {
+	width: 20%;
+}
+
+/* Media Queries */
+
+@media only screen and (max-width: 75em) {
+	html {
+		font-size: 56.25%
+	}
+}
+
+@media only screen and (max-width: 56.25em) {
+	html {
+		font-size: 50%
+	}
+
+	#goal__input {
+		max-width: 80%;
+	}
+}
